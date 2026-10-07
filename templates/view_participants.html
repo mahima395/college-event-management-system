@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registered Participants - College Event Management</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+    <header>
+        <h1>College Event Management System</h1>
+        <div class="header-user-info">
+            <span>Logged in as: <strong>{{USERNAME}}</strong></span>
+            <span class="user-badge">ADMIN</span>
+            <a href="/logout" class="btn btn-logout">Logout</a>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <div class="card">
+            <div class="card-header">
+                <div>
+                    <h2>Registered Participants for: <span style="color: #1e3a8a;">{{EVENT_NAME}}</span></h2>
+                    <p style="color: #64748b; font-size: 13px; margin-top: 4px;">Date: {{EVENT_DATE}} | Venue: {{VENUE}} | Total Registered: <strong>{{TOTAL_PARTICIPANTS}}</strong></p>
+                </div>
+                <a href="/admin/dashboard" class="btn btn-secondary">Back to Dashboard</a>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 80px;">S.No</th>
+                        <th>Student Username</th>
+                        <th>Registration Date & Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{PARTICIPANT_ROWS}}
+                </tbody>
+            </table>
+
+            <div style="margin-top: 20px;">
+                <a href="/admin/dashboard" class="btn btn-secondary">Back to Dashboard</a>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

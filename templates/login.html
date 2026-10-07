@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - College Event Management System</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body class="login-body">
+
+    <div class="login-card">
+        <div class="login-header">
+            <h2>College Event Portal</h2>
+            <p>BSc Computer Science Academic Project</p>
+        </div>
+
+        {{MESSAGE}}
+
+        <form method="POST" action="/login">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" class="form-control" placeholder="Enter username" required autofocus>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" class="form-control" placeholder="Enter password" required>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Login to Portal</button>
+            </div>
+        </form>
+
+        <div class="login-hints">
+            <strong>Default Test Credentials:</strong><br>
+            • Admin: <code>admin</code> / <code>admin123</code><br>
+            • Student: <code>student</code> / <code>student123</code>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Event - College Event Management</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+    <header>
+        <h1>College Event Management System</h1>
+        <div class="header-user-info">
+            <span>Logged in as: <strong>{{USERNAME}}</strong></span>
+            <span class="user-badge">ADMIN</span>
+            <a href="/logout" class="btn btn-logout">Logout</a>
+        </div>
+    </header>
+
+    <div class="container" style="max-width: 700px;">
+
+        {{MESSAGE}}
+
+        <div class="card">
+            <div class="card-header">
+                <h2>Add New College Event</h2>
+                <a href="/admin/dashboard" class="btn btn-secondary">Back to Dashboard</a>
+            </div>
+
+            <form method="POST" action="/admin/add-event">
+                <div class="form-group">
+                    <label for="event_name">Event Name *</label>
+                    <input type="text" id="event_name" name="event_name" class="form-control" placeholder="e.g. Annual Tech Symposium" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="event_category">Category *</label>
+                        <select id="event_category" name="event_category" class="form-control" required>
+                            <option value="">-- Select Category --</option>
+                            <option value="Cultural">Cultural</option>
+                            <option value="Sports">Sports</option>
+                            <option value="Technical">Technical</option>
+                            <option value="Academic">Academic</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="organizer">Organizer / Department *</label>
+                        <input type="text" id="organizer" name="organizer" class="form-control" placeholder="e.g. Computer Science Dept" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="event_date">Event Date *</label>
+                        <input type="date" id="event_date" name="event_date" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="event_time">Event Time *</label>
+                        <input type="time" id="event_time" name="event_time" class="form-control" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="venue">Venue *</label>
+                    <input type="text" id="venue" name="venue" class="form-control" placeholder="e.g. Auditorium Hall A" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="event_description">Event Description *</label>
+                    <textarea id="event_description" name="event_description" class="form-control" rows="4" placeholder="Enter brief details about the event, rules, schedule..." required></textarea>
+                </div>
+
+                <div style="display: flex; gap: 10px; margin-top: 20px;">
+                    <button type="submit" class="btn btn-success">Save Event</button>
+                    <a href="/admin/dashboard" class="btn btn-secondary">Cancel</a>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+</body>
+</html>

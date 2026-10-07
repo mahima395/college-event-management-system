@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - College Event Management</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+    <header>
+        <h1>College Event Management System</h1>
+        <div class="header-user-info">
+            <span>Welcome, <strong>{{USERNAME}}</strong></span>
+            <span class="user-badge">ADMIN</span>
+            <a href="/logout" class="btn btn-logout">Logout</a>
+        </div>
+    </header>
+
+    <div class="container">
+
+        {{MESSAGE}}
+
+        <div class="card">
+            <div class="card-header">
+                <h2>All College Events</h2>
+                <a href="/admin/add-event" class="btn btn-success">+ Add New Event</a>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Event Name</th>
+                        <th>Category</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Venue</th>
+                        <th>Registered</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{EVENT_ROWS}}
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+</body>
+</html>

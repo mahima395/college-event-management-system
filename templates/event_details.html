@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{EVENT_NAME}} - Event Details</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+    <header>
+        <h1>College Event Management System</h1>
+        <div class="header-user-info">
+            <span>User: <strong>{{USERNAME}}</strong></span>
+            <span class="user-badge">{{ROLE_BADGE}}</span>
+            <a href="/logout" class="btn btn-logout">Logout</a>
+        </div>
+    </header>
+
+    <div class="container" style="max-width: 800px;">
+
+        {{MESSAGE}}
+
+        <div class="card">
+            <div class="card-header">
+                <h2>Event Details: {{EVENT_NAME}}</h2>
+                <a href="{{BACK_URL}}" class="btn btn-secondary">Back to Dashboard</a>
+            </div>
+
+            <table class="details-table">
+                <tbody>
+                    <tr>
+                        <th>Event ID</th>
+                        <td>#{{EVENT_ID}}</td>
+                    </tr>
+                    <tr>
+                        <th>Event Name</th>
+                        <td><strong>{{EVENT_NAME}}</strong></td>
+                    </tr>
+                    <tr>
+                        <th>Category</th>
+                        <td>{{CATEGORY_BADGE}}</td>
+                    </tr>
+                    <tr>
+                        <th>Date & Time</th>
+                        <td>{{EVENT_DATE}} at {{EVENT_TIME}}</td>
+                    </tr>
+                    <tr>
+                        <th>Venue</th>
+                        <td>{{VENUE}}</td>
+                    </tr>
+                    <tr>
+                        <th>Organizer</th>
+                        <td>{{ORGANIZER}}</td>
+                    </tr>
+                    <tr>
+                        <th>Description</th>
+                        <td style="white-space: pre-line;">{{EVENT_DESCRIPTION}}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div style="margin-top: 25px; display: flex; gap: 12px; align-items: center;">
+                {{ACTION_BUTTONS}}
+                <a href="{{BACK_URL}}" class="btn btn-secondary">Back to Dashboard</a>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
